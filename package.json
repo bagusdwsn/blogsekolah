@@ -9,10 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.2",
-    "next": "13.1.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@babel/core": "^7.17.9",
+    "@headlessui/react": "^1.7.7",
+    "@popperjs/core": "^2.11.6",
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "next": "12.1.0",
+    "next-sanity": "^4.0.6",
+    "next-sanity-image": "^3.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.42.1",
+    "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.3.1",
+    "react-portable-text": "^0.5.1",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.8.9",
+    "touch-cli": "^0.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "@types/react": "^18.0.27",
+    "autoprefixer": "^10.4.13",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.4",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }
