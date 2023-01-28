@@ -38,7 +38,7 @@ function Navbar({ data }) {
                         Berita
                       </h1>
                     </Link>
-                    <Link href="#">
+                    <Link href="https://mim2sidomlangean.sanity.studio/">
                       <h1 className="cursor-pointer bg-blue-600 text-white px-3 py-2 hover:bg-black rounded-md text-sm font-medium">
                         Admin
                       </h1>
