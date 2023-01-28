@@ -122,7 +122,7 @@ function Navbar({ data }) {
                       Berita
                     </h1>
                   </Link>
-                  <Link href="/admin">
+                  <Link href="https://mim2sidomlangean.sanity.studio/">
                     <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                       Admin
                     </h1>
