@@ -191,7 +191,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
                   </tr>
                 </thead>
                 {guru.map((g) => (
-                  <tbody>
+                  <tbody key={g._id}>
                     <td className="border px-8 py-4">{g.idguru}</td>
                     <td className="border px-8 py-4">{g.name}</td>
                     <td className="border px-8 py-4">{g.tempatlahir}</td>
