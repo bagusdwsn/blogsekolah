@@ -5,7 +5,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 function Footer({ data }) {
-  console.log("Passed to Footer", data);
   return (
     <>
       <div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
