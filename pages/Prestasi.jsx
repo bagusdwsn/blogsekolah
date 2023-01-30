@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { Footer } from "../components";
 export const getServerSideProps = async () => {
   const infoQuery = `*[_type=="profilsekolah"]`;
-  const prestasiQuery = `*[_type=="prestasi"]|order(idguru asc)`;
+  const prestasiQuery = `*[_type=="prestasi"]|order(idprestasi asc)`;
   const info = await sanityClient.fetch(infoQuery);
   const prestasi = await sanityClient.fetch(prestasiQuery);
   return {
