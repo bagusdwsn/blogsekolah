@@ -167,7 +167,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
             {/* guru */}
             <div
               id="guru"
-              className="flex flex-col p-10 my-10 text-black max-w-3xl mx-auto"
+              className="flex flex-col p-10 my-10 text-black max-w-l mx-auto"
             >
               Guru
               <table className="shadow-lg bg-white">
