@@ -63,6 +63,11 @@ export default function Profil({ infoSekolah, kamad, guru }) {
               className="flex flex-col p-10 my-10 bg-gray-100 text-black max-w-2xl mx-auto rounded"
             >
               <h1 className="text-3xl font-bold mx-auto">Profil Madrasah</h1>
+              <img
+                className="h-20 w-20 mx-auto"
+                src={urlFor(infoSekolah[0].logo).url()}
+                alt=""
+              />
               <table className="table-auto">
                 <tbody>
                   <tr>
