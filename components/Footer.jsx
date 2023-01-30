@@ -77,6 +77,15 @@ function Footer({ data }) {
             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
               {data.alamat}
             </li>
+            {/* <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.632879080895!2d112.23239731410138!3d-7.168368172327805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e778b2b97ba219d%3A0xa4a70d7722e8cfb2!2sMI%20Muhammadiyah%2002%20Sidomlangean!5e0!3m2!1sen!2sid!4v1675099177557!5m2!1sen!2sid"
+              width="400"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe> */}
           </ul>
         </div>
       </div>
