@@ -26,17 +26,29 @@ function Footer({ data }) {
             <p className="text-gray-800 font-bold text-2xl pb-4">
               Pranala Luar
             </p>
-            <a href="https://emis.kemenag.go.id/" target="_blank">
+            <a
+              href="https://emis.kemenag.go.id/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                 Emis 4.0
               </li>
             </a>
-            <a href="https://simpatika.kemenag.go.id/madrasah" target="_blank">
+            <a
+              href="https://simpatika.kemenag.go.id/madrasah"
+              rel="noreferrer"
+              target="_blank"
+            >
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                 SIMPATIKA
               </li>
             </a>
-            <a href="https://pdum.kemenag.go.id/" target="_blank">
+            <a
+              href="https://pdum.kemenag.go.id/"
+              rel="noreferrer"
+              target="_blank"
+            >
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                 PDUM
               </li>
