@@ -5,4 +5,14 @@ import post from './post'
 import guru from './guru'
 import komentar from './komentar'
 import jabatan from './jabatan'
-export const schemaTypes = [post, profilsekolah, guru, category, blockContent, komentar, jabatan]
+import prestasi from './prestasi'
+export const schemaTypes = [
+  post,
+  profilsekolah,
+  prestasi,
+  guru,
+  category,
+  blockContent,
+  komentar,
+  jabatan,
+]

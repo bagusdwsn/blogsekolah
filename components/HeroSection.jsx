@@ -15,7 +15,7 @@ function HeroSection({ heroSection }) {
           <h2>{heroSection.heading}</h2>
         </div>
         <img
-          className="hidden rounded md:inline-flex h-80 object-cover px-10 lg:h-screen w-screen "
+          className="w-screen rounded md:inline-flex h-80 object-cover px-10 lg:h-screen w-screen "
           src={urlFor(heroSection.banner).url()}
         />
       </div>

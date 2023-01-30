@@ -15,7 +15,7 @@ function Navbar({ data }) {
                 <div className=" flex justify-center items-center flex-shrink-0">
                   <Link href="/">
                     <img
-                      className="h-12 w-12 rounded-full"
+                      className="h-12 w-12 rounded-full cursor-pointer"
                       src={urlFor(data.logo).url()}
                       alt=""
                     />
@@ -38,10 +38,18 @@ function Navbar({ data }) {
                         Berita
                       </h1>
                     </Link>
-                    <Link href="https://mim2sidomlangean.sanity.studio/">
-                      <h1 className="cursor-pointer bg-blue-600 text-white px-3 py-2 hover:bg-black rounded-md text-sm font-medium">
-                        Admin
+                    <Link href="/Prestasi" duration={500}>
+                      <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Prestasi
                       </h1>
+                    </Link>
+                    <Link href="https://mim2sidomlangean.sanity.studio/">
+                      <a
+                        target="_blank"
+                        className="cursor-pointer bg-blue-600 text-white px-3 py-2 hover:bg-black rounded-md text-sm font-medium"
+                      >
+                        Admin
+                      </a>
                     </Link>
                   </div>
                 </div>
@@ -123,9 +131,12 @@ function Navbar({ data }) {
                     </h1>
                   </Link>
                   <Link href="https://mim2sidomlangean.sanity.studio/">
-                    <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    <a
+                      target="_blank"
+                      className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    >
                       Admin
-                    </h1>
+                    </a>
                   </Link>
                 </div>
               </div>

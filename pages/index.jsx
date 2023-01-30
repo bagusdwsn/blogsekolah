@@ -72,7 +72,7 @@ export default function Home({ posts, infoSekolah }) {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer data={infoSekolah.length && infoSekolah[0]} />
     </>
   );
 }
