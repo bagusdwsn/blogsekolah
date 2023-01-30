@@ -18,6 +18,7 @@ export default defineType({
     defineField({
       name: 'namakegiatan',
       title: 'Nama Kegiatan',
+      description: 'Nama perlombaan / kegiatan',
       type: 'string',
     }),
     defineField({
