@@ -9,8 +9,8 @@ import prestasi from './prestasi'
 export const schemaTypes = [
   post,
   profilsekolah,
-  prestasi,
   guru,
+  prestasi,
   category,
   blockContent,
   komentar,
