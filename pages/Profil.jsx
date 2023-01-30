@@ -198,7 +198,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
             {/* ))} */}
           </div>
         </div>
-        <Footer />
+        <Footer data={infoSekolah.length && infoSekolah[0]} />
       </main>
     </>
   );

@@ -1,26 +1,23 @@
 import React from "react";
-import { sanityClient, urlFor } from "../sanity";
+import { sanityClient } from "../sanity";
 import Header from "../components/Header";
-import PortableText from "react-portable-text";
 import { Footer } from "../components";
 export const getServerSideProps = async () => {
-  const logoQuery = `*[_type=="profilsekolah"]{
-    logo
-  }`;
+  const infoQuery = `*[_type=="profilsekolah"]`;
   const prestasiQuery = `*[_type=="prestasi"]|order(idguru asc)`;
-  const logo = await sanityClient.fetch(logoQuery);
+  const info = await sanityClient.fetch(infoQuery);
   const prestasi = await sanityClient.fetch(prestasiQuery);
   return {
     props: {
-      logo,
+      info,
       prestasi,
     },
   };
 };
-export default function Prestasi({ logo, prestasi }) {
+export default function Prestasi({ info, prestasi }) {
   return (
     <>
-      <Header data={logo.length && logo[0]} />
+      <Header data={info.length && info[0]} />
       <div
         id="guru"
         className="flex flex-col p-10 my-10 text-black max-w-5xl mx-auto"
@@ -57,7 +54,7 @@ export default function Prestasi({ logo, prestasi }) {
           ))}
         </table>
       </div>
-      <Footer />
+      <Footer data={info.length && info[0]} />
     </>
   );
 }
