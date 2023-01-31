@@ -6,7 +6,7 @@ function HeroSection({ heroSection }) {
   console.log("Fetch data : ", heroSection);
   return (
     <div>
-      <div className="px-10 md:flex py-10 lg:justify-between lg:items-center lg:flex lg:border-y ">
+      <div className="px-10 md:flex lg:justify-between lg:items-center lg:flex lg:border-y ">
         <div className="px-10 space-y-5">
           <h1 className="text-4xl max-w-xl font-serif">
             {heroSection.namamadrasah}
