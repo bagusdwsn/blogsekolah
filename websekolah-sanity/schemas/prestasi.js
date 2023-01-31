@@ -42,6 +42,7 @@ export default defineType({
   ],
   preview: {
     select: {
+      title: 'idprestasi',
       title: 'namasiswa',
     },
   },

@@ -7,10 +7,10 @@ import komentar from './komentar'
 import jabatan from './jabatan'
 import prestasi from './prestasi'
 export const schemaTypes = [
-  post,
   profilsekolah,
-  guru,
   prestasi,
+  guru,
+  post,
   category,
   blockContent,
   komentar,
