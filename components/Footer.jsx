@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 function Footer({ data }) {
+  console.log("FOOTER FETCH : ", data);
   return (
     <>
       <div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
@@ -14,10 +15,15 @@ function Footer({ data }) {
               MIM 2 <span className="text-blue-600">Sidomlangean</span>
             </p>
             <div className="flex gap-6 pb-5">
-              <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
-              <FaFacebook className="text-2xl cursor-pointer hover:text-blue-600" />
-              <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
-              <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
+              <a href={data.instagram} target="_blank">
+                <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
+              </a>
+              <a href={data.youtube} target="_blank">
+                <FaFacebook className="text-2xl cursor-pointer hover:text-blue-600" />
+              </a>
+              <a href={data.youtube} target="_blank">
+                <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
+              </a>
             </div>
           </ul>
         </div>
@@ -60,9 +66,12 @@ function Footer({ data }) {
             <p className="text-gray-800 font-bold text-2xl pb-4">
               Media Sosial
             </p>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-              Facebook
-            </li>
+            <a href={data.facebook} target="_blank">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                Facebook
+              </li>
+            </a>
+
             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
               Instagram
             </li>
@@ -74,7 +83,7 @@ function Footer({ data }) {
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">Alamat</p>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+            <li className="text-gray-500 text-md pb-2 font-semibold">
               {data.alamat}
             </li>
             {/* <iframe
@@ -91,10 +100,12 @@ function Footer({ data }) {
       </div>
       <div className="flex flex-col justify-center items-center text-center  p-5 bg-gray-50">
         <h1 className=" text-gray-800 font-semibold">
-          © 2023 All rights reserved | Build with ❤ by{" "}
-          <span className="hover:text-blue-600 font-semibold cursor-pointer">
-            baguscodes{" "}
-          </span>
+          © 2023 All rights reserved | Built with ❤ by{" "}
+          <a href="https://github.com/baguscodes/" target="_blank">
+            <span className="hover:text-blue-600 font-semibold cursor-pointer">
+              baguscodes{" "}
+            </span>
+          </a>
         </h1>
       </div>
     </>

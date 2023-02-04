@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { sanityClient, urlFor } from "../../sanity";
 import PortableText from "react-portable-text";
 import Head from "next/head";
-
-function Post({ post, infoSekolah }) {
+import { Footer } from "../../components";
+function Post({ post, infoSekolah, kontak }) {
   const [submitted, setSubmitted] = useState(false);
   const {
     register,
@@ -37,7 +37,7 @@ function Post({ post, infoSekolah }) {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <Header data={infoSekolah.length && infoSekolah[0]} />
+      <Header data={infoSekolah} />
       <img
         className="w-full h-40 object-cover"
         src={urlFor(post.mainImage).url()}
@@ -173,6 +173,7 @@ function Post({ post, infoSekolah }) {
         ))}
       </div>
       ;
+      <Footer data={kontak} />
     </main>
   );
 }
@@ -219,8 +220,10 @@ export const getStaticProps = async ({ params }) => {
     body
   
 }`;
-  const q = `*[_type=="profilsekolah"]`;
+  const q = `*[_type=="profilsekolah"][0]`;
   const infoSekolah = await sanityClient.fetch(q);
+  const kontakQuery = `*[_type=="kontak"][0]`;
+  const kontak = await sanityClient.fetch(kontakQuery);
   const post = await sanityClient.fetch(query, { slug: params?.slug });
   if (!post) {
     return {
@@ -231,6 +234,7 @@ export const getStaticProps = async ({ params }) => {
       props: {
         post,
         infoSekolah,
+        kontak,
       },
       revalidate: 60, // update cache setiap 60 detik
     };

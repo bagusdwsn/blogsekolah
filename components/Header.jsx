@@ -38,9 +38,15 @@ function Navbar({ data }) {
                         Berita
                       </h1>
                     </Link>
+
                     <Link href="/Prestasi" duration={500}>
                       <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         Prestasi
+                      </h1>
+                    </Link>
+                    <Link href="/Hubungi">
+                      <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-sm font-medium">
+                        Kontak
                       </h1>
                     </Link>
                     <Link href="https://mim2sidomlangean.sanity.studio/">
@@ -119,6 +125,7 @@ function Navbar({ data }) {
                       Home
                     </h1>
                   </Link>
+
                   <Link href="/Profil">
                     <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                       Profil
@@ -128,6 +135,11 @@ function Navbar({ data }) {
                   <Link href="/#berita">
                     <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                       Berita
+                    </h1>
+                  </Link>
+                  <Link href="/Hubungi">
+                    <h1 className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                      Kontak
                     </h1>
                   </Link>
                   <Link href="https://mim2sidomlangean.sanity.studio/">

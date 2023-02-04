@@ -18,32 +18,35 @@ export const getServerSideProps = async () => {
   mainImage,
   slug
 }`;
-  const heroQuery = `*[_type=="profilsekolah"]`;
+  const heroQuery = `*[_type=="profilsekolah"][0]`;
+  const kontakQuery = `*[_type=="kontak"][0]`;
   const posts = await sanityClient.fetch(query);
+  const kontak = await sanityClient.fetch(kontakQuery);
   const infoSekolah = await sanityClient.fetch(heroQuery);
   return {
     props: {
       posts,
       infoSekolah,
+      kontak,
     },
   };
 };
 
-export default function Home({ posts, infoSekolah }) {
+export default function Home({ posts, infoSekolah, kontak }) {
   console.log(posts);
   console.log(infoSekolah);
   console.log(infoSekolah.heading);
+  console.log("KONTAK : ", kontak);
   // console.log("POSTS.IMAGE", posts.image);
   return (
     <>
-      {/* <Script src="https://cdn.tailwindcss.com"></Script> */}
       <Head>
         <title>MIM 2 Sidomlangean</title>
       </Head>
       <div className="">
-        <Header data={infoSekolah.length && infoSekolah[0]} />
+        <Header data={infoSekolah} />
 
-        <HeroSection heroSection={infoSekolah.length && infoSekolah[0]} />
+        <HeroSection heroSection={infoSekolah} />
         {/* posts section*/}
         <div className="#" id="berita">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
@@ -72,7 +75,7 @@ export default function Home({ posts, infoSekolah }) {
           </div>
         </div>
       </div>
-      <Footer data={infoSekolah.length && infoSekolah[0]} />
+      <Footer data={kontak} />
     </>
   );
 }

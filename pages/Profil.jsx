@@ -1,38 +1,42 @@
 import React from "react";
+import Head from "next/head";
 import { sanityClient, urlFor } from "../sanity";
 import Header from "../components/Header";
 import PortableText from "react-portable-text";
 import { Footer } from "../components";
 export const getServerSideProps = async () => {
-  const query = `*[_type=="profilsekolah"]`;
-  const qkamad = `*[_type=="guru"&&jabatan._ref=="07b07dd3-35ad-4e63-8d07-08c0bcca8402"]`;
+  const query = `*[_type=="profilsekolah"][0]`;
+  const qkamad = `*[_type=="guru"&&jabatan._ref=="07b07dd3-35ad-4e63-8d07-08c0bcca8402"][0]`;
   const qguru = `*[_type=="guru"]|order(idguru asc)`;
   const infoSekolah = await sanityClient.fetch(query);
   const guru = await sanityClient.fetch(qguru);
   const kamad = await sanityClient.fetch(qkamad);
+  const kontakQuery = `*[_type=="kontak"][0]`;
+  const kontak = await sanityClient.fetch(kontakQuery);
   return {
     props: {
       infoSekolah,
       kamad,
       guru,
+      kontak,
     },
   };
 };
-export default function Profil({ infoSekolah, kamad, guru }) {
+export default function Profil({ infoSekolah, kamad, guru, kontak }) {
   console.log("PROFILE SECTION FETCH : ", infoSekolah);
   console.log("Guru : ", guru);
   console.log("Guru type: ", typeof guru);
   return (
     <>
-      <head>
+      <Head>
         <title>Profil Madrasah</title>
-      </head>
+      </Head>
       <main className="scroll-smooth">
         <div>
-          <Header data={infoSekolah.length && infoSekolah[0]} />
+          <Header data={infoSekolah} />
           <img
             className="w-full h-60 object-cover"
-            src={urlFor(infoSekolah[0].banner).url()}
+            src={urlFor(infoSekolah.banner).url()}
           />
           <div>
             <main>
@@ -65,7 +69,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
                 <h1 className="text-3xl font-bold mx-auto">Data Madrasah</h1>
                 <img
                   className="h-20 w-20 mx-auto"
-                  src={urlFor(infoSekolah[0].logo).url()}
+                  src={urlFor(infoSekolah.logo).url()}
                   alt=""
                 />
                 <table className="table-fixed">
@@ -73,27 +77,27 @@ export default function Profil({ infoSekolah, kamad, guru }) {
                     <tr>
                       <td>Nama Madrasah</td>
                       <td> : </td>
-                      <td> {infoSekolah[0].namamadrasah} </td>
+                      <td> {infoSekolah.namamadrasah} </td>
                     </tr>
                     <tr>
                       <td>NSM</td>
                       <td> : </td>
-                      <td> {infoSekolah[0].nsm} </td>
+                      <td> {infoSekolah.nsm} </td>
                     </tr>
                     <tr>
                       <td>NPSN</td>
                       <td> : </td>
-                      <td> {infoSekolah[0].npsn} </td>
+                      <td> {infoSekolah.npsn} </td>
                     </tr>
                     <tr>
                       <td>Kepala Madrasah</td>
                       <td> : </td>
-                      <td> {kamad[0].name} </td>
+                      <td> {kamad.name} </td>
                     </tr>
                     <tr>
                       <td>Alamat</td>
                       <td> : </td>
-                      <td> {infoSekolah[0].alamat} </td>
+                      <td> {infoSekolah.alamat} </td>
                     </tr>
                   </tbody>
                 </table>
@@ -107,7 +111,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
                   <PortableText
                     dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                     projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                    content={infoSekolah[0].sejarah}
+                    content={infoSekolah.sejarah}
                     serializers={{
                       h1: (props) => (
                         <h1 className="text-2xl font-bold my-5" {...props} />
@@ -137,7 +141,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
                   <PortableText
                     dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                     projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                    content={infoSekolah[0].visimisi}
+                    content={infoSekolah.visimisi}
                     serializers={{
                       h1: (props) => (
                         <h1 className="text-2xl font-bold my-5" {...props} />
@@ -198,7 +202,7 @@ export default function Profil({ infoSekolah, kamad, guru }) {
             {/* ))} */}
           </div>
         </div>
-        <Footer data={infoSekolah.length && infoSekolah[0]} />
+        <Footer data={kontak} />
       </main>
     </>
   );
