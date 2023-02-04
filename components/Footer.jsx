@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
-function Footer({ data }) {
+export default function Footer({ data }) {
   console.log("FOOTER FETCH : ", data);
   return (
     <>
@@ -15,13 +15,13 @@ function Footer({ data }) {
               MIM 2 <span className="text-blue-600">Sidomlangean</span>
             </p>
             <div className="flex gap-6 pb-5">
-              <a href={data.instagram} target="_blank">
+              <a href={data.instagram} target="_blank" rel="noreferrer">
                 <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
               </a>
-              <a href={data.youtube} target="_blank">
+              <a href={data.youtube} target="_blank" rel="noreferrer">
                 <FaFacebook className="text-2xl cursor-pointer hover:text-blue-600" />
               </a>
-              <a href={data.youtube} target="_blank">
+              <a href={data.youtube} target="_blank" rel="noreferrer">
                 <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
               </a>
             </div>
@@ -66,7 +66,7 @@ function Footer({ data }) {
             <p className="text-gray-800 font-bold text-2xl pb-4">
               Media Sosial
             </p>
-            <a href={data.facebook} target="_blank">
+            <a href={data.facebook} target="_blank" rel="noreferrer">
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                 Facebook
               </li>
@@ -101,7 +101,11 @@ function Footer({ data }) {
       <div className="flex flex-col justify-center items-center text-center  p-5 bg-gray-50">
         <h1 className=" text-gray-800 font-semibold">
           © 2023 All rights reserved | Built with ❤ by{" "}
-          <a href="https://github.com/baguscodes/" target="_blank">
+          <a
+            href="https://github.com/baguscodes/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <span className="hover:text-blue-600 font-semibold cursor-pointer">
               baguscodes{" "}
             </span>
@@ -111,5 +115,3 @@ function Footer({ data }) {
     </>
   );
 }
-
-export default Footer;

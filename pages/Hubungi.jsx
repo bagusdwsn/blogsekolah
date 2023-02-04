@@ -4,6 +4,18 @@ import { sanityClient } from "../sanity";
 import Header from "../components/Header";
 import { Footer } from "../components";
 
+import {
+  FaBeer,
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaMailchimp,
+  FaMap,
+  FaMapMarker,
+  FaPhone,
+  FaYoutube,
+} from "react-icons/fa";
+// import { HiMail } from "react-icons/fa";
 export const getServerSideProps = async () => {
   const infoQuery = `*[_type=="profilsekolah"][0]`;
   const info = await sanityClient.fetch(infoQuery);
@@ -38,38 +50,29 @@ export default function Hubungi({ info, kontak }) {
               </div>
               <div className="flex flex-col space-y-6">
                 <div className="inline-flex space-x-2 items-center">
-                  <ion-icon
-                    name="call"
-                    className="bg-teal-300 text-lg"
-                  ></ion-icon>
+                  <FaPhone />
                   <span>(+62) {kontak.telepon}</span>
                 </div>
 
                 <div className="inline-flex space-x-2 items-center">
-                  <ion-icon
-                    name="mail"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
+                  <FaEnvelope />
                   <span>{kontak.email}</span>
                 </div>
 
                 <div className="inline-flex space-x-2 items-center">
-                  <ion-icon
-                    name="location"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
+                  <FaMapMarker />
                   <span>{kontak.alamat}</span>
                 </div>
               </div>
               <div className="flex space-x-4 text-lg">
-                <a href="#">
-                  <ion-icon name="logo-facebook"></ion-icon>
+                <a href={kontak.facebook} target="_blank" rel="noreferrer">
+                  <FaFacebook />
                 </a>
-                <a href="#">
-                  <ion-icon name="logo-instagram"></ion-icon>
+                <a href={kontak.instagram} target="_blank" rel="noreferrer">
+                  <FaInstagram />
                 </a>
-                <a href="#">
-                  <ion-icon name="logo-youtube"></ion-icon>
+                <a href={kontak.youtube} target="_blank" rel="noreferrer">
+                  <FaYoutube />
                 </a>
               </div>
             </div>
@@ -122,14 +125,7 @@ export default function Hubungi({ info, kontak }) {
             </div>
           </div>
         </div>
-        <script
-          type="module"
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-          nomodule
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-        ></script>
+
         <Footer data={kontak} />
       </body>
     </>
