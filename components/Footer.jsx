@@ -12,14 +12,14 @@ export default function Footer({ data }) {
         <div className="p-5 ">
           <ul>
             <p className="text-gray-800 font-bold text-3xl pb-6">
-              MIM 2 <span className="text-blue-600">Sidomlangean</span>
+              MIM 2 <span className="text-sky-600">Sidomlangean</span>
             </p>
             <div className="flex gap-6 pb-5">
               <a href={data.instagram} target="_blank" rel="noreferrer">
                 <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
               </a>
               <a href={data.youtube} target="_blank" rel="noreferrer">
-                <FaFacebook className="text-2xl cursor-pointer hover:text-blue-600" />
+                <FaFacebook className="text-2xl cursor-pointer hover:text-sky-600" />
               </a>
               <a href={data.youtube} target="_blank" rel="noreferrer">
                 <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
@@ -37,7 +37,7 @@ export default function Footer({ data }) {
               rel="noreferrer"
               target="_blank"
             >
-              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
                 Emis 4.0
               </li>
             </a>
@@ -46,7 +46,7 @@ export default function Footer({ data }) {
               rel="noreferrer"
               target="_blank"
             >
-              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
                 SIMPATIKA
               </li>
             </a>
@@ -55,7 +55,7 @@ export default function Footer({ data }) {
               rel="noreferrer"
               target="_blank"
             >
-              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
                 PDUM
               </li>
             </a>
@@ -67,15 +67,15 @@ export default function Footer({ data }) {
               Media Sosial
             </p>
             <a href={data.facebook} target="_blank" rel="noreferrer">
-              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
                 Facebook
               </li>
             </a>
 
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
               Instagram
             </li>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
               Kanal Youtube
             </li>
           </ul>
@@ -106,7 +106,7 @@ export default function Footer({ data }) {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="hover:text-blue-600 font-semibold cursor-pointer">
+            <span className="hover:text-sky-600 font-semibold cursor-pointer">
               baguscodes{" "}
             </span>
           </a>

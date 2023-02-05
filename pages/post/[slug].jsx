@@ -55,7 +55,7 @@ function Post({ post, infoSekolah, kontak }) {
           />
           <p className="font-extralight text-sm">
             Ditulis oleh
-            <span className="text-blue-600"> {post.guru.name} </span> pada
+            <span className="text-sky-600"> {post.guru.name} </span> pada
             {new Date(post._createdAt).toLocaleDateString()}
           </p>
         </div>
@@ -83,10 +83,10 @@ function Post({ post, infoSekolah, kontak }) {
           />
         </div>
       </article>
-      <hr className="max-w-lg my-5 mx-auto border border-blue-500" />
+      <hr className="max-w-lg my-5 mx-auto border border-sky-500" />
       {/* KOLOM KOMENTAR */}
       {submitted ? (
-        <div className="flex flex-col p-10 my-10 bg-blue-500 text-white max-w-2xl mx-auto">
+        <div className="flex flex-col p-10 my-10 bg-sky-500 text-white max-w-2xl mx-auto">
           <h3 className="text-3xl font-bold">Terima kasih!</h3>
           <p>komentarmu akan muncul setelah disetujui admin</p>
         </div>
@@ -95,7 +95,7 @@ function Post({ post, infoSekolah, kontak }) {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col p-5 max-w-2xl mx-auto mb-10 "
         >
-          <h3 className="text-sm text-blue-500">
+          <h3 className="text-sm text-sky-500">
             punya saran mengenai artikel ini?
           </h3>
           <h4 className="text-3xl font-bold">
@@ -111,7 +111,7 @@ function Post({ post, infoSekolah, kontak }) {
           <label className="block mb-5">
             <span className="text-gray-700">Nama</span>
             <input
-              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-blue-500"
+              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-sky-500"
               placeholder="isikan nama kamu"
               type="text"
               name="nama"
@@ -122,7 +122,7 @@ function Post({ post, infoSekolah, kontak }) {
           <label className="block mb-5">
             <span className="text-gray-700">Email</span>
             <input
-              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-blue-500"
+              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-sky-500"
               placeholder="isikan email kamu"
               type="text"
               name="email"
@@ -133,7 +133,7 @@ function Post({ post, infoSekolah, kontak }) {
           <label className="block mb-5">
             <span className="text-gray-700">Komentar</span>
             <textarea
-              className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full outline-none focus:ring ring-blue-500"
+              className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full outline-none focus:ring ring-sky-500"
               placeholder="isikan komentar kamu"
               type="text"
               name="komentar"
@@ -155,18 +155,18 @@ function Post({ post, infoSekolah, kontak }) {
           </div>
           <input
             type="submit"
-            className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+            className="shadow bg-sky-500 hover:bg-sky-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
             value="Post"
           />
         </form>
       )}
-      <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-blue-500 shadow space-y-2">
+      <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow-sky-500 shadow space-y-2">
         <h3 className="text-4xl">Komentar</h3>
         <hr className="pb-2" />
         {post.komentar.map((komentar) => (
           <div key={komentar._id}>
             <p className="">
-              <span className="text-blue-500">{komentar.nama}: </span>
+              <span className="text-sky-500">{komentar.nama}: </span>
               {komentar.komentar}
             </p>
           </div>
