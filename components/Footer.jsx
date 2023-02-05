@@ -1,7 +1,6 @@
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 export default function Footer({ data }) {
@@ -18,7 +17,7 @@ export default function Footer({ data }) {
               <a href={data.instagram} target="_blank" rel="noreferrer">
                 <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
               </a>
-              <a href={data.youtube} target="_blank" rel="noreferrer">
+              <a href={data.facebook} target="_blank" rel="noreferrer">
                 <FaFacebook className="text-2xl cursor-pointer hover:text-sky-600" />
               </a>
               <a href={data.youtube} target="_blank" rel="noreferrer">
@@ -71,13 +70,16 @@ export default function Footer({ data }) {
                 Facebook
               </li>
             </a>
-
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
-              Instagram
-            </li>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
-              Kanal Youtube
-            </li>
+            <a href={data.instagram} target="_blank" rel="noreferrer">
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
+                Instagram
+              </li>
+            </a>
+            <a href={data.youtube}>
+              <li className="text-gray-500 text-md pb-2 font-semibold hover:text-sky-600 cursor-pointer">
+                Channel Youtube
+              </li>
+            </a>
           </ul>
         </div>
         <div className="p-5">
