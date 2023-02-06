@@ -4,7 +4,6 @@ import { sanityClient, urlFor } from "../sanity";
 import Header from "../components/Header";
 import PortableText from "react-portable-text";
 import { Footer } from "../components";
-import { Container } from "postcss";
 export const getServerSideProps = async () => {
   const query = `*[_type=="profilsekolah"][0]`;
   const qkamad = `*[_type=="guru"&&jabatan._ref=="07b07dd3-35ad-4e63-8d07-08c0bcca8402"][0]`;
@@ -24,9 +23,9 @@ export const getServerSideProps = async () => {
   };
 };
 export default function Profil({ infoSekolah, kamad, guru, kontak }) {
-  console.log("PROFILE SECTION FETCH : ", infoSekolah);
-  console.log("Guru : ", guru);
-  console.log("Guru type: ", typeof guru);
+  console.log("GURU IMAGE :", guru.image);
+  console.log("BANNER IMAGE :", infoSekolah.banner);
+  console.log("GURU FETCH :", guru);
   return (
     <>
       <Head>
@@ -40,7 +39,7 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
             src={urlFor(infoSekolah.banner).url()}
           />
           <main>
-            <nav className="flex flex-col p-10 my-10 bg-blue-300 text-white max-w-2xl mx-auto rounded">
+            <nav className="flex flex-col p-10 my-10 bg-sky-300 text-white max-w-2xl mx-auto rounded">
               <h1 className="text-3xl font-bold">Daftar isi</h1>
               <ol className="list-decimal list-inside">
                 <li className="">
@@ -169,60 +168,25 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
               <h3 className="text-3xl font-bold mx-auto py-3">
                 Personalia Guru
               </h3>
-              {/* <table className="shadow-lg bg-white">
-                <thead>
-                  <tr>
-                    <th className="bg-blue-100 border text-left px-8 py-4">
-                      No
-                    </th>
-                    <th className="bg-blue-100 border text-left px-8 py-4">
-                      Nama
-                    </th>
-                    <th className="bg-blue-100 border text-left px-8 py-4">
-                      Tempat Lahir
-                    </th>
-                    <th className="bg-blue-100 border text-left px-8 py-4">
-                      Tanggal Lahir
-                    </th>
-                    <th className="bg-blue-100 border text-left px-8 py-4">
-                      TMT
-                    </th>
-                  </tr>
-                </thead>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
                 {guru.map((g) => (
-                  <tbody key={g._id}>
-                    <td className="border px-8 py-4">{g.idguru}</td>
-                    <td className="border px-8 py-4">{g.name}</td>
-                    <td className="border px-8 py-4">{g.tempatlahir}</td>
-                    <td className="border px-8 py-4">{g.tanggallahir}</td>
-                    <td className="border px-8 py-4">{g.tmt}</td>
-                  </tbody>
-                ))}
-              </table> */}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
-              {guru.map((g) => (
-                <div key={g.idguru}>
-                  <div className="border rounded-lg group overflow-hidden">
-                    <img
-                      className="h-60 w-max object-cover group-hover:scale-105 transition-transform duration-200"
-                      // src={urlFor(g.image).url()}
-                      alt=""
-                    />
-                    <div className="flex justify-between p-5 bg-white">
-                      <div>
-                        <p className="text-lg font-bold ">{g.name}</p>
-                        <p className="text-xs">{g.tmt}</p>
-                      </div>
+                  <div key={g.idguru}>
+                    <div className="border w-60 rounded-lg group overflow-hidden shadow-lg">
                       <img
-                        className="h-12 w-12 rounded-full"
-                        // src={urlFor(g.image).url()}
+                        className="h-60 w-60 object-cover group-hover:scale-105 transition-transform duration-200"
+                        src={urlFor(g.image).url()}
                         alt=""
                       />
+                      <div className="flex justify-between p-5 bg-white">
+                        <div>
+                          <p className=" font-bold ">{g.name}</p>
+                          <p className="text-xs">TMT : {g.tmt}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </main>
         </div>
