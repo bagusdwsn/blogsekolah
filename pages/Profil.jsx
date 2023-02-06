@@ -69,6 +69,11 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
                     Visi dan Misi
                   </a>
                 </li>
+                <li className="">
+                  <a className="" href="#guru">
+                    Guru
+                  </a>
+                </li>
               </ol>
             </nav>
 
