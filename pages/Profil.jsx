@@ -7,7 +7,19 @@ import { Footer } from "../components";
 export const getServerSideProps = async () => {
   const query = `*[_type=="profilsekolah"][0]`;
   const qkamad = `*[_type=="guru"&&jabatan._ref=="07b07dd3-35ad-4e63-8d07-08c0bcca8402"][0]`;
-  const qguru = `*[_type=="guru"]|order(idguru asc)`;
+  const qguru = `*[_type=="guru"]|order(idguru asc){
+  _id,
+  idguru,
+  name,
+  image,
+  tempatlahir,
+  tanggallahir,
+  tmt,
+  bio,
+  jabatan->{
+   jabatan
+  },
+}`;
   const infoSekolah = await sanityClient.fetch(query);
   const guru = await sanityClient.fetch(qguru);
   const kamad = await sanityClient.fetch(qkamad);
@@ -39,7 +51,7 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
             src={urlFor(infoSekolah.banner).url()}
           />
           <main>
-            <nav className="flex flex-col p-10 my-10 bg-sky-300 text-white max-w-2xl mx-auto rounded">
+            <nav className="flex flex-col p-10 my-10 bg-sky-700 text-white max-w-2xl mx-auto rounded">
               <h1 className="text-3xl font-bold">Daftar isi</h1>
               <ol className="list-decimal list-inside">
                 <li className="">
@@ -168,19 +180,31 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
               <h3 className="text-3xl font-bold mx-auto py-3">
                 Personalia Guru
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
+              <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 p-2 md:p-6">
                 {guru.map((g) => (
                   <div key={g.idguru}>
-                    <div className="border w-60 rounded-lg group overflow-hidden shadow-lg">
-                      <img
-                        className="h-60 w-60 object-cover group-hover:scale-105 transition-transform duration-200"
-                        src={urlFor(g.image).url()}
-                        alt=""
-                      />
-                      <div className="flex justify-between p-5 bg-white">
-                        <div>
-                          <p className=" font-bold ">{g.name}</p>
-                          <p className="text-xs">TMT : {g.tmt}</p>
+                    <div className="border w-fit bg-sky-100 rounded-lg group overflow-hidden shadow-lg">
+                      <div className="relative py-4">
+                        <div className="absolute z-0 shadow-md w-40 h-40 bg-sky-50 rounded-full -right-20 -top-20"></div>
+                        <div className="absolute z-0 shadow-inner w-60 h-60 bg-sky-50 rounded-full -left-28 -bottom-60"></div>
+                        <img
+                          className="z-10 h-40 w-40 my-4 mx-auto rounded-full object-cover "
+                          src={urlFor(g.image).url()}
+                          alt=""
+                        />
+                      </div>
+
+                      <div className="relative flex flex-col p-5 text-sky-700">
+                        <p className=" font-bold px-auto text-xl ">{g.name}</p>
+                        <p className="px-auto align-center text-xl pb-4 ">
+                          {g.jabatan.jabatan}
+                        </p>
+                        <div className="shadow-inner  bg-white rounded-lg">
+                          <p className="px-2">Tempat lahir : {g.tempatlahir}</p>
+                          <p className="px-2">
+                            Tanggal lahir : {g.tanggallahir}
+                          </p>
+                          <p className="px-2 ">TMT : {g.tmt}</p>
                         </div>
                       </div>
                     </div>
