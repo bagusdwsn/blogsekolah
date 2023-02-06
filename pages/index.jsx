@@ -41,6 +41,10 @@ export default function Home({ posts, infoSekolah, kontak }) {
   return (
     <>
       <Head>
+        <meta
+          name="google-site-verification"
+          content="xcxTnfQHsWOaJzAecEDuaC5U4ciweS2oq78TMvQnfiM"
+        />
         <title>MIM 2 Sidomlangean</title>
       </Head>
       <div className="">
