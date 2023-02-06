@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
+        serif: ["Poppins", "sans-serif"],
       },
       colors: {
         sky: colors.sky,
