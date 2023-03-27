@@ -8,11 +8,12 @@ function Map() {
     height: "100vh",
     latitude: -7.1683,
     longitude: 112.23462,
-    zoom: 15,
+    zoom: 10,
   });
   const markerCoordinates = {
-    latitude: -7.1683,
-    longitude: 112.23462,
+    latitude: -7.153202082925587,
+    //-7.153202082925587, 112.28189710827525
+    longitude: 112.28189710827525,
   };
   return (
     <ReactMapGL
