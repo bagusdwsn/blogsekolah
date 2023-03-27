@@ -8,12 +8,12 @@ function Map() {
     height: "100vh",
     latitude: -7.1683,
     longitude: 112.23462,
-    zoom: 10,
+    zoom: 12,
   });
   const markerCoordinates = {
-    latitude: -7.153202082925587,
+    latitude: -7.1683,
     //-7.153202082925587, 112.28189710827525
-    longitude: 112.28189710827525,
+    longitude: 112.23462,
   };
   return (
     <ReactMapGL
@@ -28,7 +28,7 @@ function Map() {
         anchor="bottom"
       >
         <FaMapMarkerAlt size={42} />
-        MI Muhammadiyah 2 Sidomlangean
+        MIM 2 Sidomlangean
       </Marker>
     </ReactMapGL>
   );
