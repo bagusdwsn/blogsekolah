@@ -49,6 +49,11 @@ function Navbar({ data }) {
                         Kontak
                       </h1>
                     </Link>
+                    <Link href="/Kunjungi">
+                      <h1 className="cursor-pointer hover:bg-sky-600 text-black hover:text-white block px-3 py-2 rounded-md text-sm font-medium">
+                        Kunjungi
+                      </h1>
+                    </Link>
                     <Link href="https://mim2sidomlangean.sanity.studio/">
                       <a
                         target="_blank"
@@ -140,6 +145,11 @@ function Navbar({ data }) {
                   <Link href="/Hubungi">
                     <h1 className="cursor-pointer hover:bg-sky-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                       Kontak
+                    </h1>
+                  </Link>
+                  <Link href="/Kunjungi">
+                    <h1 className="cursor-pointer hover:bg-sky-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                      Kunjungi
                     </h1>
                   </Link>
                   <Link href="https://mim2sidomlangean.sanity.studio/">
