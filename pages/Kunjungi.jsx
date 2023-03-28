@@ -24,12 +24,12 @@ const Map = dynamic(() => import("../components/Map.jsx"), {
 export default function Kunjungi({ infoSekolah, kontak }) {
   return (
     <>
-      <head>
+      <Head>
         <title>Kunjungi</title>
-      </head>
+      </Head>
 
       <Header data={infoSekolah} />
-      <div className="flex-row xl:mx-auto sm:max-w-m sm:mx-10 xl:w-full xl:h-[100vh] ">
+      <div className="flex-row mx-auto sm:max-w-m sm:mx-10 w-full h-[100vh] ">
         <Map />
       </div>
       {/* <section className="inline-flex min-h-[600px]"></section> */}
