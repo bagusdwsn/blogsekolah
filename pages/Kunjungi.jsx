@@ -3,6 +3,7 @@ import Head from "next/head";
 import { sanityClient, urlFor } from "../sanity";
 import Header from "../components/Header";
 import dynamic from "next/dynamic";
+import "mapbox-gl/dist/mapbox-gl.css";
 import { Footer } from "../components";
 import { Container } from "postcss";
 export const getServerSideProps = async () => {
