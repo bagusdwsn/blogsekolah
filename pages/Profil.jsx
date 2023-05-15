@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { sanityClient, urlFor } from "../sanity";
 import Header from "../components/Header";
+import { ImageSlider } from "../components";
 import PortableText from "react-portable-text";
 import { Footer } from "../components";
 export const getServerSideProps = async () => {
@@ -38,6 +39,8 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
   console.log("GURU IMAGE :", guru.image);
   console.log("BANNER IMAGE :", infoSekolah.banner);
   console.log("GURU FETCH :", guru);
+  const style =
+    "relative flex justify-center items-center h-[75] object-cover px-10 lg:h-screen w-screen ";
   return (
     <>
       <Head>
@@ -46,11 +49,11 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
       <main className="scroll-smooth">
         <div>
           <Header data={infoSekolah} />
-          <img
-            className="w-full h-60 object-cover"
-            src={urlFor(infoSekolah.banner).url()}
-          />
-          <main>
+
+          <div className="items-center overflow-hidden my-10">
+            <ImageSlider sliderStyle={style} />
+          </div>
+          <div>
             <nav className="flex flex-col p-10 my-10 bg-sky-700 text-white max-w-2xl mx-auto rounded">
               <h1 className="text-3xl font-bold">Daftar isi</h1>
               <ol className="list-decimal list-inside">
@@ -217,7 +220,7 @@ export default function Profil({ infoSekolah, kamad, guru, kontak }) {
                 ))}
               </div>
             </div>
-          </main>
+          </div>
         </div>
         <Footer data={kontak} />
       </main>

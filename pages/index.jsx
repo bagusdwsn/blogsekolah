@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Header from "../components/Header";
+import ImageSlider from "../components/ImageSlider";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
 import { sanityClient, urlFor } from "../sanity";
@@ -31,7 +32,8 @@ export const getServerSideProps = async () => {
     },
   };
 };
-
+const style =
+  "h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in ease-out";
 export default function Home({ posts, infoSekolah, kontak }) {
   console.log(posts);
   console.log(infoSekolah);

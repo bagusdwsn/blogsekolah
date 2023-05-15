@@ -30,7 +30,7 @@ export default function Kunjungi({ infoSekolah, kontak }) {
       </Head>
 
       <Header data={infoSekolah} />
-      <div className="flex-row mx-auto sm:max-w-m sm:mx-10 w-full h-[100vh] ">
+      <div className="flex-row mx-auto sm:max-w-m w-full h-[100vh] ">
         <Map />
       </div>
       {/* <section className="inline-flex min-h-[600px]"></section> */}
